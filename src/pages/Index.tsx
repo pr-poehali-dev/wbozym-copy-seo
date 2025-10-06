@@ -21,7 +21,7 @@ const Index = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('https://functions.poehali.dev/dffd4f7f-406b-4d9e-b9a9-752cf9895864', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -56,123 +56,162 @@ const Index = () => {
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-gradient">ЦЕТ'S GO!</h1>
+            <h1 className="text-2xl font-bold text-gradient">WBOZYM</h1>
             <div className="hidden md:flex gap-8">
               <button onClick={() => scrollToSection('home')} className="hover:text-primary transition-colors">Главная</button>
-              <button onClick={() => scrollToSection('tours')} className="hover:text-primary transition-colors">Туры</button>
+              <button onClick={() => scrollToSection('services')} className="hover:text-primary transition-colors">Услуги</button>
               <button onClick={() => scrollToSection('about')} className="hover:text-primary transition-colors">О нас</button>
-              <button onClick={() => scrollToSection('reviews')} className="hover:text-primary transition-colors">Отзывы</button>
+              <button onClick={() => scrollToSection('cases')} className="hover:text-primary transition-colors">Кейсы</button>
               <button onClick={() => scrollToSection('contacts')} className="hover:text-primary transition-colors">Контакты</button>
             </div>
             <Button onClick={() => scrollToSection('contacts')} className="hidden md:flex">
-              Связаться
+              Получить консультацию
             </Button>
           </nav>
         </div>
       </header>
 
       <section id="home" className="pt-32 pb-20 px-4">
-        <div className="container mx-auto text-center">
-          <h2 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="text-gradient">Приключения</span> начинаются здесь
-          </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-slide-up">
-            Откройте мир незабываемых путешествий с нашим туристическим агентством
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Button size="lg" className="text-lg px-8" onClick={() => scrollToSection('tours')}>
-              <Icon name="Compass" className="mr-2" size={20} />
-              Выбрать тур
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => scrollToSection('contacts')}>
-              <Icon name="Phone" className="mr-2" size={20} />
-              Консультация
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 gradient-orange-blue text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">500+</div>
-              <div className="text-sm md:text-base opacity-90">Довольных туристов</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">50+</div>
-              <div className="text-sm md:text-base opacity-90">Стран мира</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">10</div>
-              <div className="text-sm md:text-base opacity-90">Лет опыта</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">100%</div>
-              <div className="text-sm md:text-base opacity-90">Гарантия качества</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="tours" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Популярные направления</h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">Выберите свое идеальное путешествие</p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+                <span className="text-gradient">Аудит и продвижение</span> на маркетплейсах
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8 animate-slide-up">
+                Профессиональный консалтинг для роста продаж на Wildberries, OZON и Яндекс.Маркет
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
+                <Button size="lg" className="text-lg px-8" onClick={() => scrollToSection('contacts')}>
+                  <Icon name="Rocket" className="mr-2" size={20} />
+                  Заказать аудит
+                </Button>
+                <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => scrollToSection('services')}>
+                  <Icon name="ArrowDown" className="mr-2" size={20} />
+                  Узнать больше
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-square rounded-2xl gradient-orange-blue p-8 flex items-center justify-center">
+                <div className="grid grid-cols-2 gap-4 w-full">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-white text-center">
+                    <Icon name="TrendingUp" size={40} className="mx-auto mb-2" />
+                    <div className="text-2xl font-bold">+350%</div>
+                    <div className="text-sm opacity-90">рост продаж</div>
+                  </div>
+                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-white text-center">
+                    <Icon name="Users" size={40} className="mx-auto mb-2" />
+                    <div className="text-2xl font-bold">200+</div>
+                    <div className="text-sm opacity-90">клиентов</div>
+                  </div>
+                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-white text-center">
+                    <Icon name="Award" size={40} className="mx-auto mb-2" />
+                    <div className="text-2xl font-bold">5 лет</div>
+                    <div className="text-sm opacity-90">на рынке</div>
+                  </div>
+                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 text-white text-center">
+                    <Icon name="BarChart3" size={40} className="mx-auto mb-2" />
+                    <div className="text-2xl font-bold">98%</div>
+                    <div className="text-sm opacity-90">довольных</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="flex flex-col items-center">
+              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <Icon name="ShoppingCart" className="text-primary" size={32} />
+              </div>
+              <p className="font-semibold">Wildberries</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center mb-3">
+                <Icon name="Package" className="text-secondary" size={32} />
+              </div>
+              <p className="font-semibold">OZON</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <Icon name="Store" className="text-primary" size={32} />
+              </div>
+              <p className="font-semibold">Яндекс.Маркет</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center mb-3">
+                <Icon name="ShoppingBag" className="text-secondary" size={32} />
+              </div>
+              <p className="font-semibold">AliExpress</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="py-20 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Наши услуги</h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">Комплексные решения для вашего бизнеса</p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'Пляжный отдых',
-                description: 'Райские острова, белый песок, лазурное море',
-                icon: 'Palmtree',
-                price: 'от 50 000 ₽'
+                title: 'Аудит карточек товаров',
+                description: 'Глубокий анализ контента, фото, описаний и ключевых слов для повышения конверсии',
+                icon: 'ClipboardCheck',
+                features: ['Анализ конкурентов', 'SEO-оптимизация', 'Рекомендации']
               },
               {
-                title: 'Горные туры',
-                description: 'Треккинг, альпинизм, невероятные виды',
-                icon: 'Mountain',
-                price: 'от 45 000 ₽'
+                title: 'Продвижение товаров',
+                description: 'Настройка рекламных кампаний и стратегии продвижения на маркетплейсах',
+                icon: 'Megaphone',
+                features: ['Настройка рекламы', 'Управление бюджетом', 'A/B тестирование']
               },
               {
-                title: 'Экскурсионные туры',
-                description: 'Культура, история, архитектура мировых столиц',
-                icon: 'Building2',
-                price: 'от 60 000 ₽'
+                title: 'Аналитика продаж',
+                description: 'Подробные отчеты, прогнозы и рекомендации на основе данных',
+                icon: 'LineChart',
+                features: ['Отслеживание метрик', 'Еженедельные отчеты', 'Прогнозы']
               },
               {
-                title: 'Экзотика',
-                description: 'Африка, Азия, Латинская Америка',
-                icon: 'Globe',
-                price: 'от 80 000 ₽'
+                title: 'Оптимизация цен',
+                description: 'Стратегия ценообразования для максимизации прибыли и конкурентоспособности',
+                icon: 'DollarSign',
+                features: ['Анализ рынка', 'Динамическое ценообразование', 'Мониторинг конкурентов']
               },
               {
-                title: 'Круизы',
-                description: 'Морские путешествия с комфортом',
-                icon: 'Ship',
-                price: 'от 70 000 ₽'
+                title: 'Управление отзывами',
+                description: 'Работа с репутацией, повышение рейтинга и лояльности покупателей',
+                icon: 'MessageSquare',
+                features: ['Мониторинг отзывов', 'Работа с негативом', 'Стимулирование']
               },
               {
-                title: 'Активный отдых',
-                description: 'Дайвинг, серфинг, горные лыжи',
-                icon: 'Waves',
-                price: 'от 55 000 ₽'
+                title: 'Контент для карточек',
+                description: 'Создание продающих описаний, инфографики и фотографий товаров',
+                icon: 'FileText',
+                features: ['Копирайтинг', 'Дизайн карточек', 'Инфографика']
               }
-            ].map((tour, idx) => (
+            ].map((service, idx) => (
               <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <CardContent className="p-6">
                   <div className="w-16 h-16 rounded-full gradient-orange-blue flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon name={tour.icon as any} className="text-white" size={32} />
+                    <Icon name={service.icon as any} className="text-white" size={32} />
                   </div>
-                  <h3 className="text-2xl font-bold mb-3">{tour.title}</h3>
-                  <p className="text-muted-foreground mb-4">{tour.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-lg font-semibold text-primary">{tour.price}</span>
-                    <Button variant="ghost" className="group-hover:bg-primary group-hover:text-white transition-colors">
-                      Подробнее
-                      <Icon name="ArrowRight" className="ml-2" size={16} />
-                    </Button>
-                  </div>
+                  <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground mb-4">{service.description}</p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm">
+                        <Icon name="Check" className="text-primary" size={16} />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
             ))}
@@ -180,17 +219,17 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-4">
+      <section id="about" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Почему выбирают нас</h2>
               <div className="space-y-6">
                 {[
-                  { icon: 'Shield', title: 'Надежность', text: 'Работаем официально, все туры застрахованы' },
-                  { icon: 'DollarSign', title: 'Лучшие цены', text: 'Прямые договоры с отелями и авиакомпаниями' },
-                  { icon: 'Headphones', title: 'Поддержка 24/7', text: 'Всегда на связи в любой точке мира' },
-                  { icon: 'Star', title: 'Индивидуальный подход', text: 'Подберем тур под ваши пожелания' }
+                  { icon: 'Target', title: 'Результат', text: 'Средний рост продаж наших клиентов — 250% за 3 месяца' },
+                  { icon: 'Brain', title: 'Экспертиза', text: 'Команда специалистов с опытом работы более 5 лет' },
+                  { icon: 'Zap', title: 'Скорость', text: 'Первые результаты уже через 2 недели работы' },
+                  { icon: 'Shield', title: 'Гарантии', text: 'Возврат средств, если не достигнем KPI' }
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-4 items-start">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -206,8 +245,12 @@ const Index = () => {
             </div>
             <div className="relative">
               <div className="aspect-square rounded-2xl gradient-orange-blue p-1">
-                <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center">
-                  <Icon name="MapPin" className="text-primary" size={120} />
+                <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center p-8">
+                  <div className="text-center">
+                    <Icon name="TrendingUp" className="text-primary mx-auto mb-4" size={80} />
+                    <h3 className="text-3xl font-bold mb-2">Растем вместе</h3>
+                    <p className="text-muted-foreground">Ваш успех — наша главная цель</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -215,36 +258,51 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="reviews" className="py-20 px-4 bg-muted/30">
+      <section id="cases" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">Отзывы наших клиентов</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">Кейсы наших клиентов</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: 'Анна Смирнова',
-                text: 'Незабываемая поездка на Мальдивы! Все организовано идеально, спасибо большое команде!',
-                rating: 5
+                category: 'Электроника',
+                result: '+420% продаж',
+                text: 'Оптимизировали карточки товаров и настроили рекламу. Продажи выросли в 5 раз за 2 месяца.',
+                metrics: { views: '+350%', conversion: '+180%', revenue: '+420%' }
               },
               {
-                name: 'Дмитрий Петров',
-                text: 'Горный тур в Альпы превзошел все ожидания. Профессиональный подход на каждом этапе.',
-                rating: 5
+                category: 'Одежда',
+                result: '+280% выручка',
+                text: 'Провели полный аудит, обновили фото и описания. Рост выручки почти в 3 раза.',
+                metrics: { views: '+240%', conversion: '+140%', revenue: '+280%' }
               },
               {
-                name: 'Елена Иванова',
-                text: 'Круиз по Средиземному морю был просто волшебным! Обязательно вернемся к вам снова.',
-                rating: 5
+                category: 'Товары для дома',
+                result: '+500% трафик',
+                text: 'SEO-оптимизация карточек и грамотная рекламная стратегия дали взрывной рост.',
+                metrics: { views: '+500%', conversion: '+220%', revenue: '+380%' }
               }
-            ].map((review, idx) => (
-              <Card key={idx} className="bg-white">
+            ].map((caseItem, idx) => (
+              <Card key={idx} className="bg-white hover:shadow-xl transition-all">
                 <CardContent className="p-6">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Icon key={i} name="Star" className="text-yellow-400 fill-yellow-400" size={20} />
-                    ))}
+                  <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+                    {caseItem.category}
                   </div>
-                  <p className="text-muted-foreground mb-4 italic">"{review.text}"</p>
-                  <p className="font-semibold">{review.name}</p>
+                  <h3 className="text-2xl font-bold mb-3 text-gradient">{caseItem.result}</h3>
+                  <p className="text-muted-foreground mb-6">{caseItem.text}</p>
+                  <div className="grid grid-cols-3 gap-2 pt-4 border-t">
+                    <div>
+                      <div className="text-sm text-muted-foreground">Просмотры</div>
+                      <div className="font-bold text-primary">{caseItem.metrics.views}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground">Конверсия</div>
+                      <div className="font-bold text-primary">{caseItem.metrics.conversion}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-muted-foreground">Выручка</div>
+                      <div className="font-bold text-primary">{caseItem.metrics.revenue}</div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -252,11 +310,11 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contacts" className="py-20 px-4">
+      <section id="contacts" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Свяжитесь с нами</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Получить консультацию</h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
-            Оставьте заявку и мы подберем идеальный тур для вас
+            Оставьте заявку и мы проведем бесплатный экспресс-аудит вашего магазина
           </p>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -294,6 +352,16 @@ const Index = () => {
                   <p className="text-muted-foreground">Пн-Пт: 9:00 - 20:00<br />Сб-Вс: 10:00 - 18:00</p>
                 </div>
               </div>
+
+              <div className="mt-8 p-6 bg-primary/5 rounded-xl">
+                <h4 className="font-semibold mb-2 flex items-center gap-2">
+                  <Icon name="Gift" className="text-primary" size={20} />
+                  Бесплатный экспресс-аудит
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  При первой консультации проведем быстрый анализ вашего магазина и дадим рекомендации
+                </p>
+              </div>
             </div>
 
             <Card>
@@ -327,16 +395,19 @@ const Index = () => {
                   </div>
                   <div>
                     <Textarea
-                      placeholder="Расскажите о ваших пожеланиях"
+                      placeholder="Опишите ваш бизнес и задачи"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={4}
                     />
                   </div>
                   <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
-                    {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
+                    {isSubmitting ? 'Отправка...' : 'Получить консультацию'}
                     <Icon name="Send" className="ml-2" size={18} />
                   </Button>
+                  <p className="text-xs text-muted-foreground text-center">
+                    Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                  </p>
                 </form>
               </CardContent>
             </Card>
@@ -348,44 +419,38 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">ЦЕТ'S GO!</h3>
-              <p className="opacity-90">Ваш путь к незабываемым приключениям</p>
+              <h3 className="text-2xl font-bold mb-4">WBOZYM</h3>
+              <p className="opacity-90">Эксперты в продвижении на маркетплейсах</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Направления</h4>
+              <h4 className="font-semibold mb-4">Услуги</h4>
               <ul className="space-y-2 opacity-90">
-                <li>Европа</li>
-                <li>Азия</li>
-                <li>Америка</li>
-                <li>Африка</li>
+                <li>Аудит карточек</li>
+                <li>Продвижение</li>
+                <li>Аналитика</li>
+                <li>Контент</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Компания</h4>
+              <h4 className="font-semibold mb-4">Маркетплейсы</h4>
               <ul className="space-y-2 opacity-90">
-                <li>О нас</li>
-                <li>Контакты</li>
-                <li>Отзывы</li>
-                <li>Вакансии</li>
+                <li>Wildberries</li>
+                <li>OZON</li>
+                <li>Яндекс.Маркет</li>
+                <li>AliExpress</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Соцсети</h4>
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 transition-colors flex items-center justify-center cursor-pointer">
-                  <Icon name="Instagram" size={20} />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 transition-colors flex items-center justify-center cursor-pointer">
-                  <Icon name="Facebook" size={20} />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 transition-colors flex items-center justify-center cursor-pointer">
-                  <Icon name="Twitter" size={20} />
-                </div>
-              </div>
+              <h4 className="font-semibold mb-4">Контакты</h4>
+              <ul className="space-y-2 opacity-90">
+                <li>bestlog@bk.ru</li>
+                <li>+7 (999) 999-99-99</li>
+                <li>Пн-Пт: 9:00-20:00</li>
+              </ul>
             </div>
           </div>
           <div className="border-t border-white/20 pt-8 text-center opacity-90">
-            <p>© 2024 ЦЕТ'S GO! Все права защищены</p>
+            <p>© 2024 WBOZYM. Все права защищены</p>
           </div>
         </div>
       </footer>
